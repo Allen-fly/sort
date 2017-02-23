@@ -1,5 +1,8 @@
 package com.java.base.map;
 
+import com.java.base.Compare;
+import com.java.base.quick.QuickSort;
+
 import java.util.*;
 
 /**

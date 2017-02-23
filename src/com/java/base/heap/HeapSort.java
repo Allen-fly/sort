@@ -1,5 +1,7 @@
 package com.java.base.heap;
 
+import com.java.base.Compare;
+
 import java.util.Arrays;
 import java.util.List;
 
