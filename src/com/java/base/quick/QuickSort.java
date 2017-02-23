@@ -1,4 +1,4 @@
-package com.reacher.test.sort;
+package com.java.base.quick;
 
 import java.util.Arrays;
 import java.util.List;
