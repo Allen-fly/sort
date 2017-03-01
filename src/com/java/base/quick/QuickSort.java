@@ -38,11 +38,11 @@ public class QuickSort {
     private static <E> int partition(List<E> list, int low, int high, Compare<E> compare){
         E key = list.get(low);
         while(low < high){
-            while(low < high && !compare.compare(key, list.get(high))){
+            while(low < high && compare.compare(key, list.get(high)) < 0){
                 --high;
             }
             list.set(low, list.get(high));
-            while(low < high && compare.compare(key, list.get(low))){
+            while(low < high && compare.compare(key, list.get(low)) > 0){
                 ++low;
             }
             list.set(high, list.get(low));
@@ -56,8 +56,8 @@ public class QuickSort {
 
         QuickSort.sort(Arrays.asList(datas), new Compare<Integer>() {
             @Override
-            public boolean compare(Integer value1, Integer value2) {
-                return value1 - value2 > 0;
+            public int compare(Integer value1, Integer value2) {
+                return value1 - value2;
             }
         });
 

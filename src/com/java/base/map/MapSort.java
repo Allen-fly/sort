@@ -73,7 +73,7 @@ public class MapSort {
         }
 
         @Override
-        public boolean compare(MapEntry value1, MapEntry value2) {
+        public int compare(MapEntry value1, MapEntry value2) {
             return this.key.compare((K)value1.getKey(), (K)value2.getKey());
         }
 
@@ -88,7 +88,7 @@ public class MapSort {
         }
 
         @Override
-        public boolean compare(MapEntry value1, MapEntry value2) {
+        public int compare(MapEntry value1, MapEntry value2) {
             return this.value.compare((V)value1.getValue(), (V)value2.getValue());
         }
     }
@@ -101,8 +101,8 @@ public class MapSort {
 
         map = MapSort.sortByKey(map, new Compare<Integer>() {
             @Override
-            public boolean compare(Integer value1, Integer value2) {
-                return value1 - value2 > 0;
+            public int compare(Integer value1, Integer value2) {
+                return value1 - value2;
             }
         });
 
@@ -114,8 +114,8 @@ public class MapSort {
 
         map = MapSort.sortByValue(map, new Compare<String>() {
             @Override
-            public boolean compare(String value1, String value2) {
-                return value1.compareTo(value2) > 0;
+            public int compare(String value1, String value2) {
+                return value1.compareTo(value2);
             }
         });
 

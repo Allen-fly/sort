@@ -8,5 +8,5 @@ package com.java.base;
  */
 public interface Compare <E> {
 
-    boolean compare(E value1, E value2);
+    int compare(E value1, E value2);
 }

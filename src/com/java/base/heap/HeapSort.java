@@ -49,10 +49,10 @@ public class HeapSort {
         }
         E temp = list.get(middle);
         for(int i = (2 * middle + 1); i < length; i *= 2){
-            if(i < (length - 1) && !compare.compare(list.get(i), list.get(i + 1))){
+            if(i < (length - 1) && compare.compare(list.get(i), list.get(i + 1)) < 0){
                 ++i;
             }
-            if(compare.compare(temp,list.get(i))){
+            if(compare.compare(temp,list.get(i)) > 0){
                 break;
             }
             list.set(middle, list.get(i));
@@ -73,8 +73,8 @@ public class HeapSort {
 
         HeapSort.sort(Arrays.asList(datas), new Compare<Integer>() {
             @Override
-            public boolean compare(Integer value1, Integer value2) {
-                return value1 - value2 > 0;
+            public int compare(Integer value1, Integer value2) {
+                return value1 - value2;
             }
         });
 
